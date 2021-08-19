@@ -1,0 +1,8 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: servicio-mutantes
+        uri: lb://servicio-mutantes
+        predicates:          - Path=/api/mutantes/**
+        filters:        - StripPrefix=2          
